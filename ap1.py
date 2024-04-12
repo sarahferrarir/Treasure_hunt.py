@@ -76,8 +76,7 @@ def iniciar_combate(aventureiro, monstro):
         # Aventureiro ataca o monstro
         dano_ataque_aventureiro = aventureiro_atacar(aventureiro)
         monstro_defender(monstro, dano_ataque_aventureiro)
-        print("Aventureiro causou", dano_ataque_aventureiro, "de dano ao monstro.")
-        print("Vida atual do monstro:", monstro["vida"])
+        print(aventureiro['nome'], "causa", dano_ataque_aventureiro, "de dano. Vida atual do monstro: ", monstro["vida"])
         if not monstro_esta_vivo(monstro):
             print("O monstro foi derrotado!")
             return True
@@ -85,8 +84,7 @@ def iniciar_combate(aventureiro, monstro):
         # Monstro ataca o aventureiro
         dano_ataque_monstro = monstro_atacar(monstro)
         aventureiro_defender(aventureiro, dano_ataque_monstro)
-        print("Monstro causou", dano_ataque_monstro, "de dano ao aventureiro.")
-        print("Vida atual do aventureiro:", aventureiro["vida"])
+        print("Monstro causa", dano_ataque_monstro, "de dano. Vida atual de", aventureiro['nome'], ":", aventureiro["vida"])
         if not aventureiro_esta_vivo(aventureiro):
             print("O aventureiro foi derrotado!")
             return False
