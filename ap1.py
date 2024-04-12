@@ -2,6 +2,23 @@ import random
 
 # Operações do aventureiro
 def aventureiro_andar(aventureiro, direcao):
+    """
+    Altera o valor da posição do aventureiro conforme a direção informada pelo
+    usuário. Direções válidas:
+    - W: cima
+    - A: esquerda
+    - S: baixo
+    - D: direita
+
+    Se o aventureiro estiver nos limites do mapa, não faz nenhum movimento.
+
+    Considerar que o mapa é um sistema cartesiano, com o eixo x aumentando
+    da esquerda para a direita, e o eixo y aumentando de cima para baixo.
+    Portanto, as coordenadas (0, 0) estão no canto superior esquerdo do mapa,
+    enquanto que as coordenadas (9, 9) estão no canto inferior direito.
+
+    Retorna True caso o aventureiro tenha andado, e False caso contrário.
+    """
     x, y = aventureiro
 
     if direcao == 'W' and y > 0:  # Cima
