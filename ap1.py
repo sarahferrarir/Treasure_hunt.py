@@ -37,14 +37,14 @@ def aventureiro_andar(aventureiro, direcao):
     
 
 
-def aventureiro_atacar(aventureiro): #FEITO
+def aventureiro_atacar(aventureiro): 
     """
     Retorna um inteiro igual à Força do aventureiro, mais um valor aleatório
     entre 1 e 6.
     """
     return aventureiro['forca'] + random.randint(1,6)
 
-def aventureiro_defender(aventureiro, dano): #FEITO
+def aventureiro_defender(aventureiro, dano): 
     """
     Calcula o dano a ser absorvido pelo aventureiro, igual ao dano causado
     menos o atributo de defesa do aventureiro.
@@ -56,7 +56,7 @@ def aventureiro_defender(aventureiro, dano): #FEITO
     if dano_absorvido > 0:
         aventureiro['vida'] -= dano_absorvido
 
-def ver_atributos_aventureiro(aventureiro): #FEITO
+def ver_atributos_aventureiro(aventureiro): 
     """
     Exibe na tela os atributos do aventureiro (nome, vida, força, defesa).
     """
@@ -64,7 +64,7 @@ def ver_atributos_aventureiro(aventureiro): #FEITO
         print(f"{k}: {v}")
     
 
-def aventureiro_esta_vivo(aventureiro): #TESTAR
+def aventureiro_esta_vivo(aventureiro): 
     """
     Retorna True se a vida do aventureiro é maior que zero.
     """
@@ -103,7 +103,7 @@ def monstro_esta_vivo(monstro):
     """
     return monstro['vida'] > 0
 
-# Operações do mapa(FEITO!)
+# Operações do mapa
 def desenhar(aventureiro, tesouro):
     """
     Desenha um mapa 10 x 10, posicionando o tesouro e o aventureiro.
