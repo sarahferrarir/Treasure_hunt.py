@@ -1,1 +1,1 @@
-Grupo: sarah ferrari, pedro Silvestre, arthur aires,bernardo meirelles
+Grupo: Sarah Ferrari, Pedro Silvestre, Arthur Aires, Bernardo Meirelles
