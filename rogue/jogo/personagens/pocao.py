@@ -19,9 +19,8 @@ class Pocao:
         self.posicao = [x, y]
     
     def exportar(self):
-        return {"posicao": self.posicao}
+        return {"pocao": self.posicao}
 
     def importar(self, dados):
-        self.posicao = dados["posicao"]
-
+        self.posicao = dados["pocao"]
     
