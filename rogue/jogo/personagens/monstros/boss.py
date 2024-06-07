@@ -9,6 +9,7 @@ class Boss(Monstro):
         self.forca = int(dificuldade * random.randint(15, 30))
         self.defesa = int(dificuldade * random.randint(1, 10))
         self.xp = int(5 * dificuldade)
+        self.ouro = int(random.randint(1, 3) * dificuldade)
         print("O boss do mapa apareceu!")
 
     def defender(self, dano):
