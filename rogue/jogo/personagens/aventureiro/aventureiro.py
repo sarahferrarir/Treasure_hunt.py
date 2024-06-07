@@ -32,6 +32,8 @@ class Aventureiro:
         self.xp_por_nivel = 5
         self.movimentos = 0
 
+        self.ouro = 0
+
     def exportar(self):
         return {
             "nome": self.nome,
@@ -47,7 +49,8 @@ class Aventureiro:
             "nivel": self.nivel,
             "xp_por_nivel": self.xp_por_nivel,
             "movimentos": self.movimentos,
-            "classe": self.__class__.__name__
+            "classe": self.__class__.__name__,
+            "ouro": self.ouro
         }
 
     def importar(self, dados):
@@ -68,11 +71,16 @@ class Aventureiro:
         self.nivel = dados["nivel"]
         self.xp_por_nivel = dados["xp_por_nivel"]
 
+        self.ouro = dados["ouro"]
+
     def ganhar_xp(self, valor):
         self.xp += valor
         if self.xp >= self.xp_por_nivel:
             self.xp -= self.xp_por_nivel
             self.subir_nivel()
+
+    def ganhar_ouro(self, valor):
+        self.ouro += valor
 
     def subir_nivel(self):
         som.level_up()
