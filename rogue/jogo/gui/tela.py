@@ -36,6 +36,7 @@ class Tela:
         self.combate(mensagem_combate)
         self.cronometro()
         self.mostrar_dificuladade(aventureiro)
+        self.mostrar_ouro(aventureiro)
 
         pygame.display.update()
 
@@ -62,6 +63,11 @@ class Tela:
         fonte = pygame.font.SysFont(FONTE, GRID // 2)
         texto = fonte.render(mensagem_combate, True, CORES.branco)
         self.display.blit(texto, [MARGEM, MARGEM])
+
+    def mostrar_ouro(self, aventureiro):
+        fonte = pygame.font.SysFont(FONTE, GRID // 2)
+        texto = fonte.render(f"Ouro: {aventureiro.ouro}", True, CORES.branco)
+        self.display.blit(texto, [MARGEM, MARGEM+22])
 
     def desenha_mensagem(self, mensagem, posicao, cor=CORES.branco):
         fonte = pygame.font.SysFont(FONTE, GRID)
