@@ -8,6 +8,7 @@ class Thanos(Monstro):
         self.vida = int(dificuldade * random.randint(10, 100))
         self.forca = int(dificuldade * random.randint(15, 25))
         self.xp = int(2 * dificuldade)
+        self.ouro = int(random.randint(1, 3) * dificuldade)
         print("Um Thanos apareceu!")
 
     def atacar(self):
