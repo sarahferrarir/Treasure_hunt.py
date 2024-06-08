@@ -23,6 +23,7 @@ def iniciar_combate(aventureiro, inimigo):
         print(f"{aventureiro.nome} causa {dano} de dano! Vida de {inimigo.nome}: {inimigo.vida}")
         if not inimigo.esta_vivo():
             aventureiro.ganhar_xp(inimigo.xp)
+            aventureiro.ganhar_ouro(inimigo.ouro)
             print(f"{inimigo.nome} foi derrotado!")
             return True
 
