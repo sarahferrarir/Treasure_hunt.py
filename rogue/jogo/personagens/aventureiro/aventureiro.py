@@ -71,6 +71,8 @@ class Aventureiro:
         self.nivel = dados["nivel"]
         self.xp_por_nivel = dados["xp_por_nivel"]
 
+        self.movimentos = dados["movimentos"]
+
         self.ouro = dados["ouro"]
 
     def ganhar_xp(self, valor):
