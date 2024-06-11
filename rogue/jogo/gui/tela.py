@@ -11,6 +11,11 @@ LARGURA_ADICIONAL = 500
 ALTURA_ADICIONAL = 100
 MARGEM = 10
 
+LARGURA_LOJA = 220
+ALTURA_LOJA = 65
+LARGURA_BOTAO = 196
+ALTURA_BOTAO = 40
+
 LARGURA = TAMANHO_MAPA * GRID + LARGURA_ADICIONAL
 ALTURA = TAMANHO_MAPA * GRID + ALTURA_ADICIONAL
 
@@ -37,6 +42,7 @@ class Tela:
         self.cronometro()
         self.mostrar_dificuladade(aventureiro)
         self.mostrar_ouro(aventureiro)
+        self.loja()
 
         pygame.display.update()
 
@@ -66,7 +72,7 @@ class Tela:
 
     def mostrar_ouro(self, aventureiro):
         fonte = pygame.font.SysFont(FONTE, GRID // 2)
-        texto = fonte.render(f"Ouro: {aventureiro.ouro}", True, CORES.branco)
+        texto = fonte.render(f"Ouro: {aventureiro.ouro}$", True, CORES.branco)
         self.display.blit(texto, [MARGEM, MARGEM+22])
 
     def desenha_mensagem(self, mensagem, posicao, cor=CORES.branco):
@@ -89,6 +95,48 @@ class Tela:
 
     def tesouro(self, tesouro):
         self.desenha_mensagem("X", tesouro.posicao,tesouro.cor)
+
+    def loja(self):
+        fonte = pygame.font.SysFont(FONTE, GRID // 2)
+        texto = fonte.render("Loja da masmorra", True, CORES.branco)
+        self.display.blit(texto, [MARGEM+10, MARGEM+60])
+        fonte = pygame.font.SysFont(FONTE, GRID - 23)
+        texto = fonte.render("Clique para comprar!", True, CORES.branco)
+        self.display.blit(texto, [MARGEM+10, MARGEM+405])
+
+        rect_loja = pygame.Rect(MARGEM, ALTURA_LOJA, LARGURA_LOJA, 380)
+        pygame.draw.rect(self.display, CORES.branco, rect_loja, 3)
+
+        rect_produto1 = pygame.Rect(MARGEM+12, ALTURA_BOTAO+65, LARGURA_BOTAO, ALTURA_BOTAO)
+        pygame.draw.rect(self.display, CORES.branco, rect_produto1, 1)
+
+        rect_produto2 = pygame.Rect(MARGEM+12, ALTURA_BOTAO+130, LARGURA_BOTAO, ALTURA_BOTAO)
+        pygame.draw.rect(self.display, CORES.branco, rect_produto2, 1)
+
+        rect_produto3 = pygame.Rect(MARGEM+12, ALTURA_BOTAO+195, LARGURA_BOTAO, ALTURA_BOTAO)
+        pygame.draw.rect(self.display, CORES.branco, rect_produto3, 1)
+
+        rect_produto4 = pygame.Rect(MARGEM+12, ALTURA_BOTAO+260, LARGURA_BOTAO, ALTURA_BOTAO)
+        pygame.draw.rect(self.display, CORES.branco, rect_produto4, 1)
+
+        rect_produto5 = pygame.Rect(MARGEM+12, ALTURA_BOTAO+325, LARGURA_BOTAO, ALTURA_BOTAO)
+        pygame.draw.rect(self.display, CORES.branco, rect_produto5, 1)
+
+        fonte = pygame.font.SysFont(FONTE, GRID - 22)
+        texto = fonte.render("Ataduras-5$", True, CORES.branco)
+        self.display.blit(texto, [MARGEM+16, ALTURA_BOTAO+75])
+
+        fonte = pygame.font.SysFont(FONTE, GRID - 23)
+        texto = fonte.render("Poção de xp-10$", True, CORES.branco)
+        self.display.blit(texto, [MARGEM+16, ALTURA_BOTAO+140])
+        texto = fonte.render("Poção de vida-15$", True, CORES.branco)
+        self.display.blit(texto, [MARGEM+16, ALTURA_BOTAO+205])
+        texto = fonte.render("Poção de força-15$", True, CORES.branco)
+        self.display.blit(texto, [MARGEM+16, ALTURA_BOTAO+270])
+        texto = fonte.render("Poção de defesa-15$", True, CORES.branco)
+        self.display.blit(texto, [MARGEM+16, ALTURA_BOTAO+335])
+
+
 
     def mapa(self, aventureiro, tesouro, obstaculos,pocao):
         for linha in range(TAMANHO_MAPA):
