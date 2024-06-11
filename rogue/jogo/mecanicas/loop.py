@@ -9,6 +9,7 @@ from . import movimento
 from . import inputbox
 from . import buttonbox
 from . import arquivo
+from . import loja
 
 from jogo.personagens.monstros.boss import Boss
 from jogo.personagens.aventureiro.aventureiro import Aventureiro
@@ -59,6 +60,49 @@ def jogo():
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT:
                 return
+            
+            if evento.type == pygame.MOUSEBUTTONUP:
+                pos = pygame.mouse.get_pos()
+                match loja.analizar_clique(pos):
+                    case "Ataduras":
+                        if jogador.ouro - 5 >= 0:
+                            jogador.ouro -= 5
+                            jogador.vida += 10
+                            mensagem_combate = "Você comprou ataduras! um pouco de vitalidade aumentada."
+                        else:
+                            mensagem_combate = "Você não possui ouro suficiente."
+                    case "Pocao de xp":
+                        if jogador.ouro - 10 >= 0:
+                            jogador.ouro -= 10
+                            jogador.xp += 5
+                            if jogador.xp >= jogador.xp_por_nivel:
+                                jogador.xp -= jogador.xp_por_nivel
+                                jogador.subir_nivel()
+                            mensagem_combate = "Você comprou uma poção de xp! xp aumentado."
+                        else:
+                            mensagem_combate = "Você não possui ouro suficiente."
+                    case "Pocao de vida":
+                        if jogador.ouro - 15 >= 0:
+                            jogador.ouro -= 15
+                            jogador.vida += 50
+                            mensagem_combate = "Você comprou uma poção de vida! Vitalidade aumentada."
+                        else:
+                            mensagem_combate = "Você não possui ouro suficiente."
+                    case "Pocao de força":
+                        if jogador.ouro - 15 >= 0:
+                            jogador.ouro -= 15
+                            jogador.forca += 10
+                            mensagem_combate = "Você comprou uma poção de força! Força aumentada."
+                        else:
+                            mensagem_combate = "Você não possui ouro suficiente."
+                    case "Pocao de defesa":
+                        if jogador.ouro - 15 >= 0:
+                            jogador.ouro -= 15
+                            jogador.defesa += 5
+                            mensagem_combate = "Você comprou uma poção de defesa! Defesa aumentada."
+                        else:
+                            mensagem_combate = "Você não possui ouro suficiente."
+                
 
             if evento.type == pygame.KEYUP:
                 if teclas[pygame.K_q]:
