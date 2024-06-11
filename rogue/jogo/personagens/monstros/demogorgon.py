@@ -8,5 +8,5 @@ class Demogorgon(Monstro):
         self.vida = int(dificuldade * random.randint(80, 120))
         self.forca = int(dificuldade * random.randint(5, 25))
         self.xp = int(1 * dificuldade)
-        self.ouro = int(random.randint(1, 3) * dificuldade)
+        self.ouro = int(random.randint(1, 5) * dificuldade)
         print("Um Demogorgon apareceu!")
