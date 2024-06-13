@@ -1,3 +1,3 @@
-Jogo Caça ao Tesouro, por linha de comando. Neste jogo, o jogador controla um aventureiro (representado pelo caractere @) que está em busca de um tesouro (representado pelo caractere X) localizado em um mapa 10 x 10. Enquanto percorre o mapa atrás do tesouro, o aventureiro pode se deparar com diversos monstros!
+Nova funcionalidade: Para nosso projeto elaboramos uma loja de itens. Nessa loja o aventureiro pode a qualquer momento clicar com o mouse num dos itens e casa tenha o gold necessario ele irá consumir uma poção que melhora um de seus atributos. o gol pode ser obitido ao derrotar os monstros durante a aventura.
 
 Grupo: Sarah Ferrari, Pedro Silvestre, Arthur Aires, Bernardo Meirelles, Rodrigo Ferrett
